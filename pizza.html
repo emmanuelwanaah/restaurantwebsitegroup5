@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="https://kit.fontawesome.com/ba48008116.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5" rel="stylesheet">
+                
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+ <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Rubik:wght@400;500;600;700&family=Shadows+Into+Light&display=swap"
+  rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preload"as="image" href="assets/images/hero-banner.png" media="min-width(768px)">
+    <link rel="preload"as="image" href="assets/images/hero-banner-bg.png" media="min-width(768px)">
+    <link rel="preload"as="image" href="assets/images/hero-bg.jpg">
+    <title>Tasty Queen</title>
+</head>
+<body>
+    <header class="header active" data-header>
+        <div class="container">
+            <h1>
+                <a href="#" class="logo">Tasty Queen <span class="span"> .</span></a>
+
+            </h1>
+            <nav class="navbar" data-navbar>
+                <ul class="navbar-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="menu.html" class="navbar-link show" data-nav-link>Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="navbar-link" data-nav-link>About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact us.html" class="navbar-link" data-nav-link>Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog.html" class="navbar-link" data-nav-link>Blog</a>
+                    </li>
+                   
+                  </ul>              
+            </nav>
+
+            <div class="header-btn-group">
+                <button class="search-btn" aria-label="Search" data-search-btn>
+                    <ion-icon name="search-outline"></ion-icon>
+                </button>
+               
+                <button class="nav-toggle-btn" aria-label="Toggle Menu" data-nav-toggle-btn>
+                    <span class="line top"></span>
+                    <span class="line middle"></span>
+                    <span class="line bottom"></span>
+
+                </button>
+                <div class="cart-boxes">
+                    <a id="cart-icon" data-quantity="0"><ion-icon name="cart-outline"></ion-icon></a>
+                    
+                </div>
+                <div class="cart" id="paymentForm">
+                    <h2 class="cart-title">Your Cart</h2>
+                    <div class="cart-content">
+                           <!-- <img src="images/f1.jpg" alt="" class="cart-img">
+                        <div class="detail-box">
+                            <div class="cart-.cart-product-title">Product Shirt</div>
+                            <div class="cart-price">₵50</div>
+                            <input type="number" name="" id="" value="1" class="cart-quantity">
+                            
+                        </div>
+                        <i class='bx bx-trash-alt cart-remove'></i> -->
+                         
+                        
+                    </div>
+                    <div class="total">
+                        <div class="total-title">Total :</div>
+                        <div class="total-price" id="amount">₵0</div>
+                    </div>
+                    <button id="payNowButton" type="submit" class="btn-buy" onclick="payWithPaystack(event)">
+                        Pay Now
+                    </button>
+                    <div id="loadingAnimation" class="loader"></div>
+
+                    <i class='bx bx-x ' id="close-cart"></i>
+                </div>
+                
+            </div>
+           
+        </div>
+        
+        
+    </header>
+
+
+    <!-- search box -->
+    <div class="search-container" data-search-container>
+            <div class="search-box">
+                <input type="search" name="search" class="search-input" aria-label="Search here" placeholder="Type keywords here...">
+                <button class="search-submit" aria-label="Submit search" data-search-submit-btn>
+                    <ion-icon name="search-outline"></ion-icon>
+
+
+                </button>
+            </div>
+            <div>
+
+                <button class="search-close-btn" aria-label="Cancel search" data-search-close-btn>
+                    <ion-icon name="close-outline"></ion-icon>
+                    
+                </button>
+            </div>
+    </div>
+
+
+    <section class="section white food-menu" id="food-menu">
+        <div class="container">
+            <p class="section-subtitle">Popular Dishes</p>
+            <h2 class="h2 section-title">Our Delicious <span class="span">Foods</span></h2>
+            <p class="section-text">
+                Food is any substance consumed to provide nutritional support for an organism.
+            </p>
+    <ul class="filter-list">
+        <li>
+           <a href="menu.html"><button class="filter-btn">All</button></a>
+        </li>
+        <li>
+            <a href="pizza.html"><button class="filter-btn active">Pizza</button></a>
+        </li>
+        <li>
+            <a href="burger.html"><button class="filter-btn">Burger</button></a>
+        </li>
+        <li>
+            <a href="drinks.html"><button class="filter-btn">Drinks</button></a>
+        </li>
+        <li>
+            <a href="sandwich.html"><button class="filter-btn">Sandwich</button></a>
+        </li>
+    </ul>
+    <ul class="food-menu-list">
+        <li>
+            <div class="food-menu-card">
+                <div class="card-banner">
+                    <img src="assets/images/pizza.png" width="300" height="300" loading="lazy" alt="fried chicken unlimited" class=" product-img product-img">
+                    <div class="badge">-15%</div>
+                    <button class="btn food-menu-btn">Order Now</button>
+    
+                </div>
+                <div class="wrapper">
+                    <p class="category">Chicken</p>
+    
+                    <div class="rating-wrapper">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                    </div>
+                </div>
+                <div class="add-tocart">
+                    <h3 class="h3  card-title cart-product-title">Fried Chicken nut</h3>
+                    <a class="add-cart"><ion-icon name="cart-outline"></ion-icon></a>
+                </div>
+                <div class="price-wrapper">
+                    <p class="price-text">Price:</p>
+                    <data class="price" value="49.00">₵49.00</data>
+                    <del class="del">₵69.00</del>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="food-menu-card">
+                <div class="card-banner">
+                    <img src="assets/images/pizza2.png" width="300" height="300" loading="lazy" alt="fried chicken unlimited" class=" product-img">
+                    <div class="badge">-10%</div>
+                    <button class="btn food-menu-btn">Order Now</button>
+    
+                </div>
+                <div class="wrapper">
+                    <p class="category">Noodles</p>
+    
+                    <div class="rating-wrapper">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                    </div>
+                </div>
+                  <div class="add-tocart">
+                    <h3 class="h3  card-title cart-product-title">Fried Chicken wings</h3>
+                    <a class="add-cart"><ion-icon name="cart-outline"></ion-icon></a>
+                </div>
+               
+
+                <div class="price-wrapper">
+                    <p class="price-text">Price:</p>
+                    <data class="price" value="49.00">₵49.00</data>
+                    <del class="del">₵69.00</del>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="food-menu-card">
+                <div class="card-banner">
+                    <img src="assets/images/pizza3.png" width="300" height="300" loading="lazy" alt="fried chicken unlimited" class=" product-img">
+                    <div class="badge">-25%</div>
+                    <button class="btn food-menu-btn">Order Now</button>
+    
+                </div>
+                <div class="wrapper">
+                    <p class="category">Noddles</p>
+    
+                    <div class="rating-wrapper">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                    </div>
+                </div>
+                <div class="add-tocart">
+                    <h3 class="h3  card-title cart-product-title">Burger King Whopper</h3>
+                    <a class="add-cart"><ion-icon name="cart-outline"></ion-icon></a>
+                </div>
+               
+                <div class="price-wrapper">
+                    <p class="price-text">Price:</p>
+                    <data class="price" value=" 29.00 ">₵29.00 </data>
+                    <del class="del">₵39.00</del>
+                </div>
+            </div>
+        </li>
+      
+        <li>
+            <div class="food-menu-card">
+                <div class="card-banner">
+                    <img src="assets/images/pizza4.png" width="300" height="300" loading="lazy" alt="White Castle Pizzas" class="w-100 product-img">
+                    <div class="badge">-25%</div>
+                    <button class="btn food-menu-btn">Order Now</button>
+    
+                </div>
+                <div class="wrapper">
+                    <p class="category">Pizzas</p>
+    
+                    <div class="rating-wrapper">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                    </div>
+                </div>
+                <div class="add-tocart">
+                    <h3 class="h3 card-title cart-product-title">White Castle Pizzas</h3>
+
+                    <a class="add-cart"><ion-icon name="cart-outline"></ion-icon></a>
+                </div>
+                
+                
+                <div class="price-wrapper">
+                    <p class="price-text">Price:</p>
+                    <data class="price" value=" 49.00 ">₵49.00 </data>
+                    <del class="del">₵69.00</del>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="food-menu-card">
+                <div class="card-banner">
+                    <img src="assets/images/pizza.png" width="300" height="300" loading="lazy" alt="Bell Burrito Supreme" class=" product-img">
+                    <div class="badge">-20%</div>
+                    <button class="btn food-menu-btn">Order Now</button>
+    
+                </div>
+                <div class="wrapper">
+                    <p class="category">Burrito</p>
+    
+                    <div class="rating-wrapper">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                    </div>
+                </div>
+                <div class="add-tocart">
+                    <h3 class="h3  card-title cart-product-title">Bell Burrito Supreme</h3>
+                    <a class="add-cart"><ion-icon name="cart-outline"></ion-icon></a>
+                </div>
+                
+                <div class="price-wrapper">
+                    <p class="price-text">Price:</p>
+                    <data class="price" value=" 59.00 ">₵59.00 </data>
+                    <del class="del">₵69.00</del>
+                </div>
+            </div>
+        </li>
+     
+    
+        <li>
+            <div class="food-menu-card">
+                <div class="card-banner">
+                    <img src="assets/images/pizza.png" width="300" height="300" loading="lazy" alt="Wendy's Chicken" class=" product-img">
+                    <div class="badge">-15%</div>
+                    <button class="btn food-menu-btn">Order Now</button>
+    
+                </div>
+                <div class="wrapper">
+                    <p class="category">Chicken </p>
+    
+                    <div class="rating-wrapper">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                    </div>
+                </div>
+                <div class="add-tocart">
+                    <h3 class="h3  card-title cart-product-title">Bell Burrito</h3>
+
+                    <a class="add-cart"><ion-icon name="cart-outline"></ion-icon></a>
+                </div>
+                
+                <div class="price-wrapper">
+                    <p class="price-text">Price:</p>
+                    <data class="price" value=" 49.00 ">₵59.00 </data>
+                    <del class="del">₵69.00</del>
+                </div>
+            </div>
+        </li>
+    
+    
+        
+    
+    </ul>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-brand">
+                    <a href="#" class="logo">Tasty Queen <span class="span"> .</span></a>
+                    <p class="footer-text">
+                        Financial experts support or help you to to
+     find out which way you can raise your funds more.
+                    </p>
+                    <ul class="social-list">
+    
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-facebook"></ion-icon>
+                            </a>
+                        </li>
+    
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-twitter"></ion-icon>
+                            </a>
+                        </li>
+    
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-instagram"></ion-icon>
+                            </a>
+                        </li>
+    
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-pinterest"></ion-icon>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="footer-list">
+                    <li>
+                        <p class="footer-list-title">Contact Info</p>
+    
+                    </li>
+                    <li>
+                        <p class="footer-list-item">+233 547 080 848</p>
+                    </li>
+                    <li>
+                        <p class="footer-list-item">Info@YourGmail24.com
+                        </p>
+                    </li>
+    
+                    <li>
+                        <address class="footer-list-item">153 Williamson Plaza, Maggieberg, MT 09514</address>
+                    </li>
+                </ul>
+    
+    
+    
+                <ul class="footer-list">
+                    <li>
+                        <p class="footer-list-title">Opening Hours</p>
+    
+                    </li>
+                    <li>
+                        <p class="footer-list-item">Monday-Friday: 08:00-22:00</p>
+                    </li>
+                    <li>
+                        <p class="footer-list-item">Tuesday 4PM: Till Mid Night
+                        </p>
+                    </li>
+    
+                    <li>
+                        <ps class="footer-list-item">Saturday: 10:00-16:00</p>
+                    </li>
+                </ul>
+    
+                <form action="" class="footer-form">
+                    <p class="footer-list-title">Book a Table</p>
+                    <div class="input-wrapper">
+                        <input type="text" name="Full_name" 
+                        required placeholder="Your Name" aria-label="Your Name"
+                         class="input-field">
+    
+                         <input type="email" name="email-address" 
+                         required placeholder="Email" aria-label="Email"
+                          class="input-field">
+                    </div>
+                    <div class="input-wrapper">
+                        <select name="total_person" aria-label="total_person" id="" class="input-field">
+                            <option value="person">1 Person</option>
+                            <option value="2 person">2 Person</option>
+                            <option value=" 3 person">3 Person</option>
+                            <option value="4 person">4 Person</option>
+                            <option value=" 5 person">5 Person</option>
+                        </select>
+    
+                        <input type="date" id="" name="booking_date"
+                         aria-label="Reservation date"  class="input-field" required>
+                    </div>
+                    <textarea name="Message" aria-label="Message" class="input-field" required placeholder="Message">
+                    </textarea>
+                    <button class="submit btn">Book</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="copyright-text">
+                    &copy; 2024 <a href="#" class="copyright-link"></a> group5(ITE G) All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <a href="#top" class="back-top-btn" aria-label="Back to top" data-back-top-btn>
+    <ion-icon name="chevron-up" ></ion-icon>
+    </a>
+    
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+    <script src="payment.js"></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+        <!-- icon links -->
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+
+
+
+
